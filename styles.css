@@ -24,12 +24,17 @@ body {
 #random-button {
   padding: 10px 20px;
   font-size: 18px;
-  background-color: #3498db;
+  background-color: #ff6b6b; /* เปลี่ยนสีปุ่มเป็นสีแดง */
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   margin-top: 20px;
+  transition: background-color 0.3s ease; /* เพิ่มเอฟเฟกต์ transition */
+}
+
+#random-button:hover {
+  background-color: #ff4d4d; /* เปลี่ยนสีปุ่มเมื่อนำเม้าส์ไป hover */
 }
 
 .popup {
@@ -50,6 +55,7 @@ body {
   padding: 20px;
   border-radius: 10px;
   text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* เพิ่มเอฟเฟกต์ shadow */
 }
 
 .close {
