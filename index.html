@@ -1,25 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Random Reward Generator</title>
+  <title>เครื่องมือสุ่มรางวัล</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="container">
     <div class="reward-box">
-      <button id="random-button">Random Reward</button>
+      <div class="reward-image"></div>
+      <button id="random-button">สุ่มรางวัล</button>
     </div>
     <div id="popup" class="popup">
       <div class="popup-content">
         <span class="close">&times;</span>
-        <h2>Congratulations!</h2>
-        <p>You've won <span id="reward-amount"></span> credits!</p>
+        <h2>ยินดีด้วย!</h2>
+        <p>คุณได้รับรางวัล <span id="reward-amount"></span> เครดิตแล้ว!</p>
         <form id="username-form">
-          <label for="username">Enter your username:</label>
+          <label for="username">กรอกชื่อผู้ใช้ของคุณ:</label>
           <input type="text" id="username" name="username">
-          <button type="submit">Confirm</button>
+          <button type="submit">ยืนยัน</button>
         </form>
       </div>
     </div>
