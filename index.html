@@ -1,29 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>แจกเครดิตฟรี</title>
+  <title>เครื่องมือสุ่มรางวัล</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="container">
-    <div class="box" id="prizeBox">
-      <img src="box_image.jpg" alt="กล่องรางวัล">
-      <button onclick="randomPrize()">สุ่มรางวัล</button>
+    <div class="reward-box">
+      <img src="reward_image.jpg" alt="รูปภาพรางวัล">
+      <button id="random-button">สุ่มรางวัล</button>
     </div>
-    <div class="popup" id="resultPopup">
-      <div class="prize-result">
-        <h2>ยินดีด้วย! คุณได้รับรางวัล</h2>
-        <p id="prizeAmount"></p>
-        <form onsubmit="claimPrize()">
-          <input type="text" placeholder="กรุณากรอกชื่อผู้ใช้">
+    <div id="popup" class="popup">
+      <div class="popup-content">
+        <span class="close">&times;</span>
+        <h2>ยินดีด้วย!</h2>
+        <p>คุณได้รับรางวัล <span id="reward-amount"></span> เครดิตแล้ว!</p>
+        <form id="username-form">
+          <label for="username">กรอกชื่อผู้ใช้ของคุณ:</label>
+          <input type="text" id="username" name="username">
           <button type="submit">ยืนยัน</button>
         </form>
       </div>
     </div>
   </div>
-
   <script src="script.js"></script>
 </body>
 </html>
