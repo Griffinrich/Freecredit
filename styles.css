@@ -21,6 +21,7 @@ body {
 }
 
 #random-button {
+  text-align: center;
   padding: 10px 20px;
   font-size: 18px;
   background-color: #3498db;
