@@ -2,7 +2,6 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f0f0f0; /* พื้นหลังสีฟ้าอ่อน */
 }
 
 .container {
@@ -18,13 +17,13 @@ body {
 }
 
 .reward-image {
-  width: 200px; /* ปรับขนาดของรูปภาพกล่องรางวัล */
+  width: 200px; /* ปรับขนาดตามที่ต้องการ */
 }
 
 #random-button {
   padding: 10px 20px;
   font-size: 18px;
-  background-color: #3498db; /* โทนสีฟ้า */
+  background-color: #3498db;
   color: white;
   border: none;
   border-radius: 5px;
