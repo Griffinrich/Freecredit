@@ -1,18 +1,28 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>กล่องสุ่มเครดิต</title>
+    <title>Credit Giveaway</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <canvas id="boxCanvas" width="150" height="150"></canvas>
-        <h1>กล่องสุ่มเครดิต</h1>
-        <div id="result"></div>
-        <button id="btnGenerate">สุ่ม</button>
+    <div id="container">
+        <div id="box">
+            <h2>กล่องสุ่มรางวัล</h2>
+            <button onclick="randomCredit()">สุ่มรางวัล</button>
+        </div>
+        <div id="result">
+            <h3>ยินดีด้วย! คุณได้รับเครดิตฟรี</h3>
+            <p>รางวัล: <span id="prize"></span> เครดิต</p>
+            <form action="#">
+                <label for="username">ชื่อผู้ใช้:</label>
+                <input type="text" id="username" name="username" required>
+                <button type="submit" onclick="claimPrize()">ยืนยัน</button>
+            </form>
+        </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
