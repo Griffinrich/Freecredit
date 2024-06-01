@@ -1,61 +1,21 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
+document.getElementById('random-button').addEventListener('click', function() {
+  var rewards = [50, 100, 150, 200, 250, 300, 350];
+  var randomReward = rewards[Math.floor(Math.random() * rewards.length)];
+  document.getElementById('reward-amount').innerText = randomReward;
+  document.getElementById('popup').style.display = 'flex';
+});
 
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
+document.querySelector('.close').addEventListener('click', function() {
+  document.getElementById('popup').style.display = 'none';
+});
 
-.reward-box {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-#random-button {
-  padding: 10px 20px;
-  font-size: 18px;
-  background-color: #3498db;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.popup {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1;
-  justify-content: center;
-  align-items: center;
-}
-
-.popup-content {
-  background-color: #fefefe;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-}
-
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
+document.getElementById('username-form').addEventListener('submit', function(event) {
+  event.preventDefault();
+  var username = document.getElementById('username').value;
+  if (username.trim() !== '') {
+    alert('ยินดีด้วย, ' + username + '! คุณได้รับรางวัลของคุณแล้ว!');
+    window.location.href = 'https://lin.ee/WXS8t3t';
+  } else {
+    alert('กรุณากรอกชื่อผู้ใช้ของคุณ');
+  }
+});
