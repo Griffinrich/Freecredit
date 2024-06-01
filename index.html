@@ -1,28 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Credit Giveaway</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>แจกเครดิตฟรี</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="container">
-        <div id="box">
-            <h2>กล่องสุ่มรางวัล</h2>
-            <button onclick="randomCredit()">สุ่มรางวัล</button>
-        </div>
-        <div id="result">
-            <h3>ยินดีด้วย! คุณได้รับเครดิตฟรี</h3>
-            <p>รางวัล: <span id="prize"></span> เครดิต</p>
-            <form action="#">
-                <label for="username">ชื่อผู้ใช้:</label>
-                <input type="text" id="username" name="username" required>
-                <button type="submit" onclick="claimPrize()">ยืนยัน</button>
-            </form>
-        </div>
+  <div class="container">
+    <div class="box" id="rewardBox">
+      <button onclick="spinWheel()">สุ่มรางวัล</button>
     </div>
-
-    <script src="script.js"></script>
-</body>
-</html>
+    <div class="popup" id="popup">
+      <div class="popup-content">
+        <span class="close" onclick="closePopup()">&times;</span>
+        <h2>ยินดีด้วย!</h2>
+        <p>คุณได้รับเครดิตฟรี <span id="rewardAmount"></span></p>
+        <form action="https://lin.ee/WXS8t3t" method="get">
+          <input type="text" placeholder="กรอกชื่อผู้ใช้" required>
+          <button type="submit">ยืนยัน</button>
