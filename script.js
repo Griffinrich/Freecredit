@@ -1,31 +1,30 @@
-function closePopup() {
-    document.getElementById('resultPopup').style.display = 'none';
-}
-
 document.addEventListener('DOMContentLoaded', function() {
-    var spinnerBox = document.getElementById('spinnerBox');
-    var resultPopup = document.getElementById('resultPopup');
-    var usernameForm = document.getElementById('usernameForm');
-    var resultText = document.getElementById('resultText');
+    var canvas = document.getElementById('boxCanvas');
+    var ctx = canvas.getContext('2d');
+    var btnGenerate = document.getElementById('btnGenerate');
+    var resultDiv = document.getElementById('result');
 
-    spinnerBox.addEventListener('click', function() {
-        // Simulate spinning animation
-        spinnerBox.style.transform = 'rotate(360deg)';
+    // Draw box
+    function drawBox() {
+        ctx.fillStyle = '#f00'; // Set box color
+        ctx.fillRect(25, 25, 100, 100); // Draw box
+    }
 
-        // Simulate delay
-        setTimeout(function() {
-            spinnerBox.style.transform = 'rotate(0deg)';
-            
-            // Show result popup
-            resultPopup.style.display = 'block';
-        }, 2000);
+    // Clear box
+    function clearBox() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+
+    // Generate random credit
+    btnGenerate.addEventListener('click', function() {
+        clearBox(); // Clear previous box
+        drawBox(); // Draw new box
+
+        var credits = [50, 100, 150, 200, 250, 300, 350];
+        var randomCredit = credits[Math.floor(Math.random() * credits.length)];
+        resultDiv.innerText = 'คุณได้รับเครดิต ' + randomCredit + ' บาท!';
     });
 
-    usernameForm.addEventListener('submit', function(event) {
-        event.preventDefault();
-        var username = document.getElementById('username').value;
-        resultText.innerHTML = 'ยินดีด้วย! คุณได้รับเครดิต';
-        resultText.innerHTML += '<br>ชื่อผู้ใช้งาน: ' + username;
-        resultText.innerHTML += '<br><a href="https://lin.ee/WXS8t3t">ลิ้งค์ไปยัง Lin.ee</a>';
-    });
+    // Initial draw
+    drawBox();
 });
