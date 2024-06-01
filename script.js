@@ -1,74 +1,31 @@
-body {
-    font-family: 'Kanit', sans-serif;
-    background-color: #f0f8ff; /* สีฟ้าอ่อน */
-    margin: 0;
-    padding: 0;
+function closePopup() {
+    document.getElementById('resultPopup').style.display = 'none';
 }
 
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
+document.addEventListener('DOMContentLoaded', function() {
+    var spinnerBox = document.getElementById('spinnerBox');
+    var resultPopup = document.getElementById('resultPopup');
+    var usernameForm = document.getElementById('usernameForm');
+    var resultText = document.getElementById('resultText');
 
-.spinner-box {
-    position: relative;
-}
+    spinnerBox.addEventListener('click', function() {
+        // Simulate spinning animation
+        spinnerBox.style.transform = 'rotate(360deg)';
 
-.spinner-image {
-    width: 150px;
-    height: 150px;
-    cursor: pointer;
-    transition: transform 0.5s ease-in-out;
-}
+        // Simulate delay
+        setTimeout(function() {
+            spinnerBox.style.transform = 'rotate(0deg)';
+            
+            // Show result popup
+            resultPopup.style.display = 'block';
+        }, 2000);
+    });
 
-.popup {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-.popup-content {
-    text-align: center;
-}
-
-.close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-}
-
-#resultText {
-    font-size: 18px;
-}
-
-#usernameForm {
-    margin-top: 20px;
-}
-
-#username {
-    padding: 10px;
-    margin-right: 10px;
-}
-
-button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
+    usernameForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        var username = document.getElementById('username').value;
+        resultText.innerHTML = 'ยินดีด้วย! คุณได้รับเครดิต';
+        resultText.innerHTML += '<br>ชื่อผู้ใช้งาน: ' + username;
+        resultText.innerHTML += '<br><a href="https://lin.ee/WXS8t3t">ลิ้งค์ไปยัง Lin.ee</a>';
+    });
+});
