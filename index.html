@@ -3,19 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>แจกเครดิตฟรี</title>
+  <title>Random Reward Generator</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="container">
-    <div class="box" id="rewardBox">
-      <button onclick="spinWheel()">สุ่มรางวัล</button>
+    <div class="reward-box">
+      <button id="random-button">Random Reward</button>
     </div>
-    <div class="popup" id="popup">
+    <div id="popup" class="popup">
       <div class="popup-content">
-        <span class="close" onclick="closePopup()">&times;</span>
-        <h2>ยินดีด้วย!</h2>
-        <p>คุณได้รับเครดิตฟรี <span id="rewardAmount"></span></p>
-        <form action="https://lin.ee/WXS8t3t" method="get">
-          <input type="text" placeholder="กรอกชื่อผู้ใช้" required>
-          <button type="submit">ยืนยัน</button>
+        <span class="close">&times;</span>
+        <h2>Congratulations!</h2>
+        <p>You've won <span id="reward-amount"></span> credits!</p>
+        <form id="username-form">
+          <label for="username">Enter your username:</label>
+          <input type="text" id="username" name="username">
+          <button type="submit">Confirm</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
