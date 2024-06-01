@@ -1,18 +1,21 @@
-function spinWheel() {
-  // สุ่มเลขรางวัล
+document.getElementById('random-button').addEventListener('click', function() {
   var rewards = [50, 100, 150, 200, 250, 300, 350];
-  var rewardIndex = Math.floor(Math.random() * rewards.length);
-  var rewardAmount = rewards[rewardIndex];
+  var randomReward = rewards[Math.floor(Math.random() * rewards.length)];
+  document.getElementById('reward-amount').innerText = randomReward;
+  document.getElementById('popup').style.display = 'flex';
+});
 
-  // แสดงป๊อปอัพ
-  var popup = document.getElementById("popup");
-  var rewardAmountDisplay = document.getElementById("rewardAmount");
-  rewardAmountDisplay.textContent = rewardAmount;
+document.querySelector('.close').addEventListener('click', function() {
+  document.getElementById('popup').style.display = 'none';
+});
 
-  popup.style.display = "block";
-}
-
-function closePopup() {
-  var popup = document.getElementById("popup");
-  popup.style.display = "none";
-}
+document.getElementById('username-form').addEventListener('submit', function(event) {
+  event.preventDefault();
+  var username = document.getElementById('username').value;
+  if (username.trim() !== '') {
+    alert('Congratulations, ' + username + '! You have successfully claimed your reward!');
+    window.location.href = 'https://lin.ee/WXS8t3t';
+  } else {
+    alert('Please enter your username.');
+  }
+});
