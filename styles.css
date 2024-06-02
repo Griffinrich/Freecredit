@@ -14,6 +14,12 @@ body {
   position: relative; /* For positioning fireworks container */
 }
 
+.reward-title {
+  font-size: 1.5em;
+  color: #3498db;
+  margin-bottom: 10px;
+}
+
 .reward-box {
   text-align: center;
   background: white;
