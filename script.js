@@ -17,7 +17,7 @@ document.getElementById('username-form').addEventListener('submit', function(eve
     alert('ยินดีด้วย, ' + username + '! คุณได้รับรางวัลของคุณเรียบร้อยแล้ว!');
     window.location.href = 'https://lin.ee/WXS8t3t';
   } else {
-    alert('กรุณาใส่ชื่อผู้ใช้ของคุณ');
+    alert('กรุณาใส่ชื่อยูสเซอร์เนมของคุณ');
   }
 });
 
