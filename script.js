@@ -3,10 +3,12 @@ document.getElementById('random-button').addEventListener('click', function() {
   var randomReward = rewards[Math.floor(Math.random() * rewards.length)];
   document.getElementById('reward-amount').innerText = randomReward;
   document.getElementById('popup').style.display = 'flex';
+  triggerFireworks(); // เรียกใช้ฟังก์ชันพลุ
 });
 
 document.querySelector('.close').addEventListener('click', function() {
   document.getElementById('popup').style.display = 'none';
+  stopFireworks(); // หยุดพลุเมื่อปิดป๊อปอัพ
 });
 
 document.getElementById('username-form').addEventListener('submit', function(event) {
@@ -19,3 +21,21 @@ document.getElementById('username-form').addEventListener('submit', function(eve
     alert('กรุณาใส่ชื่อผู้ใช้ของคุณ');
   }
 });
+
+function triggerFireworks() {
+  var container = document.getElementById('fireworks-container');
+  container.innerHTML = ''; // ล้างพลุเก่า
+
+  for (var i = 0; i < 5; i++) {
+    var firework = document.createElement('div');
+    firework.className = 'firework';
+    firework.style.left = Math.random() * 100 + '%';
+    firework.style.animationDelay = Math.random() * 2 + 's';
+    container.appendChild(firework);
+  }
+}
+
+function stopFireworks() {
+  var container = document.getElementById('fireworks-container');
+  container.innerHTML = '';
+}
