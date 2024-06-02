@@ -9,7 +9,6 @@
 <body>
   <div class="container">
     <div class="reward-box">
-      <h1 class="reward-title">กล่องสุ่มแจกรางวัลเครดิตฟรี 50-350 บาท</h1>
       <img src="box_image.jpg" alt="ภาพรางวัล" class="reward-image">
       <button id="random-button">สุ่มรางวัล</button>
     </div>
@@ -20,13 +19,14 @@
         <p>คุณได้รับ <span id="reward-amount"></span> เครดิตแล้ว!</p>
         <form id="username-form">
           <label for="username">กรุณาใส่ยูสเซอร์เนม:</label>
-          <input type="text" id="username" name="username">
+          <input type="text" id="username" name="username" required>
           <button type="submit">ยืนยัน</button>
         </form>
       </div>
     </div>
   </div>
   <div id="fireworks-container"></div>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
