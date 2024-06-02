@@ -31,6 +31,7 @@ function triggerFireworks() {
     firework.className = 'firework';
     firework.style.left = Math.random() * 100 + '%';
     firework.style.animationDelay = Math.random() * 2 + 's';
+    firework.style.backgroundColor = getRandomColor();
     container.appendChild(firework);
   }
 }
@@ -38,4 +39,13 @@ function triggerFireworks() {
 function stopFireworks() {
   var container = document.getElementById('fireworks-container');
   container.innerHTML = '';
+}
+
+function getRandomColor() {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
 }
