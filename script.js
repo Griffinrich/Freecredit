@@ -3,7 +3,7 @@ document.getElementById('random-button').addEventListener('click', function() {
   var randomReward = rewards[Math.floor(Math.random() * rewards.length)];
   document.getElementById('reward-amount').innerText = randomReward;
   document.getElementById('popup').style.display = 'flex';
-  triggerFireworks();
+  showFireworks();
 });
 
 document.querySelector('.close').addEventListener('click', function() {
@@ -17,34 +17,28 @@ document.getElementById('username-form').addEventListener('submit', function(eve
     alert('ยินดีด้วย, ' + username + '! คุณได้รับรางวัลของคุณเรียบร้อยแล้ว!');
     window.location.href = 'https://lin.ee/WXS8t3t';
   } else {
-    alert('กรุณาใส่ชื่อยูสเซอร์เนมของคุณ');
+    alert('กรุณาใส่ยูสเซอร์เนมของคุณ');
   }
 });
 
-function triggerFireworks() {
-  var duration = 5 * 1000; // 5 seconds
-  var animationEnd = Date.now() + duration;
-  var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+function showFireworks() {
+  const duration = 4 * 1000;
+  const animationEnd = Date.now() + duration;
+  const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
 
   function randomInRange(min, max) {
     return Math.random() * (max - min) + min;
   }
 
-  var interval = setInterval(function() {
-    var timeLeft = animationEnd - Date.now();
+  const interval = setInterval(function() {
+    const timeLeft = animationEnd - Date.now();
 
     if (timeLeft <= 0) {
       return clearInterval(interval);
     }
 
-    var particleCount = 100 * (timeLeft / duration);
-    confetti(Object.assign({}, defaults, {
-      particleCount,
-      origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 }
-    }));
-    confetti(Object.assign({}, defaults, {
-      particleCount,
-      origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 }
-    }));
+    const particleCount = 50 * (timeLeft / duration);
+    confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } }));
+    confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
   }, 250);
 }
