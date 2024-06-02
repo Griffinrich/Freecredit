@@ -2,31 +2,28 @@ body {
   font-family: 'Kanit', sans-serif;
   margin: 0;
   padding: 0;
-  background: linear-gradient(to right, #6dd5fa, #2980b9);
-  overflow: hidden; /* Prevent scrollbar during fireworks */
-}
-
-h3 {
-  text-align: center;
-  font-size: 2.5em;
-  color: #3498db;
-  margin-bottom: 20px;
+  background-color: #f0f0f0;
 }
 
 .container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  position: relative; /* For positioning fireworks container */
+  text-align: center;
 }
 
 .reward-box {
   text-align: center;
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.reward-title {
+  font-size: 1.5em;
+  color: #3498db;
+  margin-bottom: 10px;
 }
 
 .reward-image {
@@ -43,13 +40,10 @@ h3 {
   border-radius: 5px;
   cursor: pointer;
   margin-top: 20px;
-  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
 #random-button:hover {
   background-color: #2980b9;
-  transform: scale(1.1);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .popup {
@@ -66,29 +60,30 @@ h3 {
 }
 
 .popup-content {
-  background-color: white;
+  background-color: #fefefe;
   padding: 20px;
   border-radius: 10px;
   text-align: center;
-  position: relative;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  animation: popup 0.5s;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  animation: popup-appear 0.3s ease-in-out;
 }
 
-@keyframes popup {
-  from { transform: scale(0); }
-  to { transform: scale(1); }
+@keyframes popup-appear {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .close {
   color: #aaa;
-  position: absolute;
-  top: 10px;
-  right: 20px;
+  float: right;
   font-size: 28px;
   font-weight: bold;
-  cursor: pointer;
-  transition: color 0.3s;
 }
 
 .close:hover,
@@ -98,36 +93,20 @@ h3 {
   cursor: pointer;
 }
 
-#fireworks-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none; /* So it doesn't block other interactions */
-  z-index: 0; /* Behind popup */
-}
-
-form {
-  margin-top: 20px;
-}
-
-label {
+#username-form label {
   display: block;
-  margin-bottom: 10px;
-  font-size: 16px;
+  margin: 10px 0;
 }
 
-input[type="text"] {
-  width: calc(100% - 22px);
-  padding: 10px;
+#username-form input {
+  padding: 5px;
   font-size: 16px;
-  border: 1px solid #ccc;
   border-radius: 5px;
-  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
 }
 
-button[type="submit"] {
+#username-form button {
   padding: 10px 20px;
   font-size: 18px;
   background-color: #3498db;
@@ -135,11 +114,8 @@ button[type="submit"] {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
-button[type="submit"]:hover {
+#username-form button:hover {
   background-color: #2980b9;
-  transform: scale(1.1);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
