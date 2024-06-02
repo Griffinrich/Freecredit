@@ -2,7 +2,7 @@ body {
   font-family: 'Kanit', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f0f0f0;
+  background: linear-gradient(to right, #6dd5fa, #2980b9);
   overflow: hidden; /* Prevent scrollbar during fireworks */
 }
 
@@ -16,6 +16,10 @@ body {
 
 .reward-box {
   text-align: center;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .reward-image {
@@ -32,12 +36,13 @@ body {
   border-radius: 5px;
   cursor: pointer;
   margin-top: 20px;
-  transition: background-color 0.3s, transform 0.3s;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
 #random-button:hover {
   background-color: #2980b9;
   transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .popup {
@@ -54,11 +59,12 @@ body {
 }
 
 .popup-content {
-  background-color: #fefefe;
+  background-color: white;
   padding: 20px;
   border-radius: 10px;
   text-align: center;
   position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   animation: popup 0.5s;
 }
 
@@ -93,4 +99,40 @@ body {
   height: 100%;
   pointer-events: none; /* So it doesn't block other interactions */
   z-index: 0; /* Behind popup */
+}
+
+form {
+  margin-top: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+input[type="text"] {
+  width: calc(100% - 22px);
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #2980b9;
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
