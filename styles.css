@@ -2,7 +2,7 @@ body {
   font-family: 'Kanit', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f0f0f0;
+  background: linear-gradient(to right, #6dd5fa, #ffffff);
   overflow: hidden; /* ป้องกันไม่ให้หน้าจอเลื่อน */
 }
 
@@ -22,22 +22,28 @@ body {
 .reward-image {
   width: 200px;
   border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.reward-image:hover {
+  transform: scale(1.1);
 }
 
 #random-button {
-  padding: 10px 20px;
-  font-size: 18px;
+  padding: 15px 30px;
+  font-size: 20px;
   background-color: #3498db;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 25px;
   cursor: pointer;
   margin-top: 20px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 #random-button:hover {
   background-color: #2980b9;
+  transform: scale(1.1);
 }
 
 .popup {
@@ -54,11 +60,23 @@ body {
 }
 
 .popup-content {
-  background-color: #fefefe;
-  padding: 20px;
-  border-radius: 10px;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
   text-align: center;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  animation: popup-animation 0.5s ease;
+}
+
+@keyframes popup-animation {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .close {
@@ -66,13 +84,13 @@ body {
   float: right;
   font-size: 28px;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .close:hover,
 .close:focus {
   color: black;
   text-decoration: none;
-  cursor: pointer;
 }
 
 #fireworks-container {
@@ -84,6 +102,7 @@ body {
   pointer-events: none; /* ป้องกันไม่ให้พลุมีผลต่อการคลิก */
   z-index: 1;
 }
+
 @keyframes explode {
   0% {
     transform: scale(0.1);
@@ -103,4 +122,28 @@ body {
   background-color: red;
   border-radius: 50%;
   animation: explode 1.5s linear infinite;
+}
+
+#username-form input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  width: calc(100% - 22px);
+}
+
+#username-form button {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#username-form button:hover {
+  background-color: #27ae60;
+  transform: scale(1.05);
 }
